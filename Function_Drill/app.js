@@ -120,7 +120,9 @@ var allStartingWithA = (wordArray)=> {
 // Test Cases:
 // Expect anyStartingWithB(['Amy', 'Bob']) to equal true
 // Expect anyStartingWithB(['apple', 'alligator', 'Arkansas'])) to equal false
-//const anyStartingWithB = function (words) {
+
+//This is my function: 
+/*
 var anyStartingWithB = (wordArray) => {
     var startWithB = 0
     for (var i=0; i < wordArray.length; i++) {
@@ -133,8 +135,25 @@ var anyStartingWithB = (wordArray) => {
     } else {
         console.log(false)
     }
-}
-//anyStartingWithB(['Amy', 'Bob'])
+}*/
+
+//This function use method .map and .split() in classs reveiwe
+// .split splits an array by the delimeter
+const anyStartingWithB = function (words) {
+    let testArray = words
+    testArray.map((wordInTheArray)=>{
+      let splitArray = wordInTheArray.split("")
+      console.log(splitArray)
+      if(splitArray[0]== "b" || splitArray[0]== "B"){
+          console.log("True")
+      }else{
+          console.log("False")
+      }
+    })
+  }
+
+
+anyStartingWithB(['Amy', 'Bob'])
 //anyStartingWithB(['apple', 'alligator', 'Arkansas'])
 
 // This last set of functions are all related to one another! Use functions 7 to solve function 8,
@@ -304,9 +323,9 @@ var noneHaveTwoOrMoreVowels = (words) => {
     // Expect buildObjectFromWords(['apple', 'banana', 'cranberry'])
     // to equal {'apple': 5, 'banana': 6, 'cranberry': 9}
 var buildObjectFromWords = (wordsArray) => {
-    var fruit = {}
+    var fruit = {wordsArray: }
     for (var i = 0 ; i < wordsArray.length; i++) {    
-     fruit[wordsArray[i]] = wordsArray[i].length      
+     fruit.wordsArray[i] = wordsArray[i].length      
     }
     console.log(fruit) 
 }
