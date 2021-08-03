@@ -1,0 +1,42 @@
+.nav {
+    color: green;
+    text-decoration: none;
+    padding: 3px;
+    display: flex;
+    border: solid black 2px;
+    justify-content: space-between;
+    animation: slideIn 3s infinite;
+    width: 100vw;
+}
+
+.navItem {
+    border: solid black 1px;
+}
+
+@media (max-width:699px) and (min-width:520px) {
+    .nav {
+        color: red;
+        display: flex;
+        font-size: 3em;
+    }
+}
+@keyframes slideIn {
+    100% {
+        transform: matrix(2,0,0,0,30,30);
+    }
+}
+.box{
+    background-color: red;
+    border: solid red 2px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    animation: scaleBox 3s infinite;
+
+}
+@keyframes scaleBox {
+    100% {
+        width: 200px;
+    }
+}
