@@ -323,9 +323,9 @@ var noneHaveTwoOrMoreVowels = (words) => {
     // Expect buildObjectFromWords(['apple', 'banana', 'cranberry'])
     // to equal {'apple': 5, 'banana': 6, 'cranberry': 9}
 var buildObjectFromWords = (wordsArray) => {
-    var fruit = {wordsArray: }
+    var fruit = {}
     for (var i = 0 ; i < wordsArray.length; i++) {    
-     fruit.wordsArray[i] = wordsArray[i].length      
+     fruit[wordsArray[i]] = wordsArray[i].length      
     }
     console.log(fruit) 
 }
