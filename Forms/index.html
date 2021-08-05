@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form action="" >  <!--action is for screen reader-->
+      <input type="text" name="" id="">
+      <input type="radio" name="" id="">
+      <input type="submit" value="">
+      <input type="button" value="">
+  </form>
+  <form action="" onsubmit="sayHello()">
+      <label for="firstName">First Name:</label> <!--for screen reader to know that for input firstName-->
+      <input type="text" name="firstName" id="firstName" placeholder="Please Enter First Name">
+      <br>
+      <label for="lastName">Last Name:</label>
+      <input type="text" name="LastName" id="lastName" placeholder="Please Enter Last Name">
+    <input type="submit" value="">
+  </form>
+
+    <input type="text" name="" id="userName" placeholder="Set User Name">
+    
+    <input type="text" name="" id="userPassword" placeholder="Set User Password">
+    <button onclick="setInfo()">Set Info</button>
+    <hr>
+
+    <h1>Calculator</h1>
+    <input type="text" name="" id="numOne">
+    
+    <input type="text" name="" id="numTwo">
+    <button onclick="addition()">+ Answer</button>
+    <button onclick="subtract()">- Answer</button>
+    <button onclick="multiply()">* Answer</button>
+    <button onclick="divide()">/ Answer</button>
+    <hr>
+    <input type="text" name="" id="one">
+    <input type="text" name="" id="two">
+    <input type="text" name="" id="three">
+    <input type="text" name="" id="four">
+    <input type="text" name="" id="five">
+    <button onclick="averageNum()">Average Number</button>
+
+   <script src="app.js"></script> 
+</body>
+</html>
