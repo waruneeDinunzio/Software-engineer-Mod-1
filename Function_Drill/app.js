@@ -8,15 +8,24 @@
 // Expect sumOfNums([-1,0,1])) to equal 0
 // Expect sumOfNums([])) to equal 0
 
-var sumOfNums = (num) => {
-    let answer = 0;
-    for (var i = 0; i < num.length; i++) {
+/*const sumOfNums = (num) => {
+    if(num.length == 0) return 0 // implicit return
+    let answer = 0
+    for (let i = 0; i < num.length; i++) {
         
         answer += num[i]
     }
     console.log(answer)
+}*/
+
+const sumOfNums = (num) => {
+    let sum = num.reduce((number,acc) => {
+        acc += number
+        return acc
+    },0)
+    return console.log(sum)
 }
-//sumOfNums([1,2,3,4,5])
+sumOfNums([1,2,3,4,5])
 //sumOfNums([0,0,5])
 //sumOfNums([-1,0,1])
 //sumOfNums([])
@@ -27,9 +36,9 @@ var sumOfNums = (num) => {
 // greater (i.e. greater than but not equal to) than 10
 // Test Case:
 // Expect numsGreaterThanTen([-1, 0, 1, 9, 9.5, 9.99, 10, 11, 20, 100]) to equal [11, 20, 100]
-var numsGreaterThanTen = (num) => {
-    var greaterThanTen = []
-    for (var i = 0; i < num.length; i++) {
+const numsGreaterThanTen = (num) => {
+    let greaterThanTen = []
+    for (let i = 0; i < num.length; i++) {
         if (num[i] > 10) {
             greaterThanTen.push(num[i])
         }
@@ -50,9 +59,9 @@ var numsGreaterThanTen = (num) => {
 // Expect allGreaterThanTen([10])) to equal false
 // Expect allGreaterThanTen([])).to.equal(true);
 
-var allGreaterThanTen = (arrayOfNum) => {
-    var greaterThanTen = []
-    for (var i = 0; i < arrayOfNum.length; i++) {
+const allGreaterThanTen = (arrayOfNum) => {
+    let greaterThanTen = []
+    for (let i = 0; i < arrayOfNum.length; i++) {
         if (arrayOfNum[i] > 10) {
            greaterThanTen.push(arrayOfNum[i]) 
         }
@@ -76,9 +85,9 @@ var allGreaterThanTen = (arrayOfNum) => {
 // Test Cases:
 // Expect wordsWithAtLeastFiveLetters(['alphabet', 'banana', 'carrot', 'doe', 'egg'])
 // to equal ['alphabet', 'banana', 'carrot']
-var wordsWithAtLeastFiveLetters = (letter) => {
-    var fivelettersUp = []
-    for (var i = 0; i < letter.length; i++) {
+const wordsWithAtLeastFiveLetters = (letter) => {
+    const fivelettersUp = []
+    for (let i = 0; i < letter.length; i++) {
         if (letter[i].length > 5) {
             fivelettersUp.push(letter[i])
         }
@@ -96,9 +105,9 @@ var wordsWithAtLeastFiveLetters = (letter) => {
 // Expect allStartingWithA(['apple', 'alligator', 'Arkansas'])) to equal true
 // Expect allStartingWithA(['Amy', 'Bob'])) to equal false
 // Expect allStartingWithA([]) to equal true
-var allStartingWithA = (wordArray)=> {
-    var startWithA = []
-    for (var i=0; i < wordArray.length; i++){
+const allStartingWithA = (wordArray)=> {
+    const startWithA = []
+    for (let i=0; i < wordArray.length; i++){
         if (wordArray[i].toLowerCase().charAt(0) == "a" ) {
         startWithA.push(wordArray[i])    
         }
@@ -169,9 +178,9 @@ anyStartingWithB(['Amy', 'Bob'])
     // This case should be true as long as n is less or equal to 6
     // Expect hasAtLeastNVowels('dangerous', 5) to equal false
     // Expect hasAtLeastNVowels('banana', -1) to equal null
-var hasAtLeastNVowels = (word,n) => {
-    var numVowels = 0
-    for (var i=0; i< word.length; i++) {
+const hasAtLeastNVowels = (word,n) => {
+    let numVowels = 0
+    for (let i=0; i< word.length; i++) {
         if (word.charAt(i) == "a" || word.charAt(i) == "e" || word.charAt(i) == "i" || word.charAt(i) == "o" || word.charAt(i) == "u") {
             numVowels += 1
         }
@@ -197,11 +206,11 @@ var hasAtLeastNVowels = (word,n) => {
     // Test Cases:
     // Expect wordsWithAtLeastTwoVowels(['alphabet', 'bun', 'can', 'doe', 'egg'])
     // to equal ['alphabet', 'doe']
-var wordsWithAtLeastTwoVowels = (words) => {
-    var twoVowelsWords = []
+const wordsWithAtLeastTwoVowels = (words) => {
+    const twoVowelsWords = []
     
-    for (i = 0; i < words.length; i ++) {
-        var counter = 0
+    for (let i = 0; i < words.length; i ++) {
+        let counter = 0
         for ( j = 0; j < words[i].length; j++) {
             if (words[i].charAt(j) == "a" || words[i].charAt(j) == "e" || words[i].charAt(j) == "i" || words[i].charAt(j) == "o" || words[i].charAt(j) == "u") {
                 counter += 1
@@ -223,11 +232,11 @@ var wordsWithAtLeastTwoVowels = (words) => {
     // Expect allHaveAtLeastTwoVowels(['Al', 'Barbara']) to equal false
     // Expect allHaveAtLeastTwoVowels(['Al', 'buck', 'can']) to equal false
     // Expect allHaveAtLeastTwoVowels([]) to equal true
-var allHaveAtLeastTwoVowels = (words) => {
-    var twoVowelsWords = []
+const allHaveAtLeastTwoVowels = (words) => {
+    const twoVowelsWords = []
     
-    for (i = 0; i < words.length; i ++) {
-        var counter = 0
+    for (let i = 0; i < words.length; i ++) {
+        let counter = 0
         for ( j = 0; j < words[i].length; j++) {
             if (words[i].charAt(j) == "a" || words[i].charAt(j) == "e" || words[i].charAt(j) == "i" || words[i].charAt(j) == "o" || words[i].charAt(j) == "u") {
                 counter += 1
@@ -255,11 +264,11 @@ var allHaveAtLeastTwoVowels = (words) => {
     // Test Cases:
     // Expect anyHaveAtLeastTwoVowels(['apple', 'alligator', 'Arkansas'])) to equal true
     // Expect anyHaveAtLeastTwoVowels(['APPLE', 'bun', 'CAT'])) to equal true
-var anyHaveAtLeastTwoVowels = (words) => {
-    var twoVowelsWords = []
+const anyHaveAtLeastTwoVowels = (words) => {
+    const twoVowelsWords = []
     
-    for (i = 0; i < words.length; i ++) {
-        var counter = 0
+    for (let i = 0; i < words.length; i ++) {
+        let counter = 0
         for ( j = 0; j < words[i].length; j++) {
             if (words[i].toLowerCase().charAt(j) == "a" || words[i].toLowerCase().charAt(j) == "e" || words[i].toLowerCase().charAt(j) == "i" || words[i].toLowerCase().charAt(j) == "o" || words[i].toLowerCase().charAt(j) == "u") {
                 counter += 1
@@ -288,10 +297,10 @@ var anyHaveAtLeastTwoVowels = (words) => {
     // Expect noneHaveTwoOrMoreVowels(['Al', 'Barbara'])) to equal false
     // Expect noneHaveTwoOrMoreVowels(['apple', 'alligator', 'Arkansas']) to equal false
     // Expect noneHaveTwoOrMoreVowels([]) to equal true
-var noneHaveTwoOrMoreVowels = (words) => {
+const noneHaveTwoOrMoreVowels = (words) => {
     var twoVowelsWords = [] 
     
-    for (i = 0; i < words.length; i ++) {
+    for (let i = 0; i < words.length; i ++) {
         var counter = 0
         for ( j = 0; j < words[i].length; j++) {
             if (words[i].toLowerCase().charAt(j) == "a" || words[i].toLowerCase().charAt(j) == "e" || words[i].toLowerCase().charAt(j) == "i" || words[i].toLowerCase().charAt(j) == "o" || words[i].toLowerCase().charAt(j) == "u") {
@@ -322,9 +331,9 @@ var noneHaveTwoOrMoreVowels = (words) => {
     // Test Cases:
     // Expect buildObjectFromWords(['apple', 'banana', 'cranberry'])
     // to equal {'apple': 5, 'banana': 6, 'cranberry': 9}
-var buildObjectFromWords = (wordsArray) => {
-    var fruit = {}
-    for (var i = 0 ; i < wordsArray.length; i++) {    
+const buildObjectFromWords = (wordsArray) => {
+    let fruit = {}
+    for (let i = 0 ; i < wordsArray.length; i++) {    
      fruit[wordsArray[i]] = wordsArray[i].length      
     }
     console.log(fruit) 

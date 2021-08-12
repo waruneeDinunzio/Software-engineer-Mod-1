@@ -5,6 +5,8 @@ const generateSq = (numOfSq)=>{
         let $square = $("<div>").addClass("square") 
         //append it to the body
         $("body").append($square)
+        //add the number of each square
+        $square.text(i)
         //add css property color in Square
         $square.css("background-color",randomColorRGB())
     }
