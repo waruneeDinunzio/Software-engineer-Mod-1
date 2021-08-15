@@ -30,6 +30,7 @@
     const bird = new Animal("Hedwig",3, "snow",2,"deliver Anything for you")
     //bird.useSuperPower()
     const wolf = new Animal("Ghost",6,"white",4,"sensing enemy") 
+    const snake = new Animal("Nakini",50,"black", 0,"can vanish")
 
 /*
 2.Create a class name User
